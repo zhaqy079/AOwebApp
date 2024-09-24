@@ -1,0 +1,106 @@
+@*@model IEnumerable<AOWebApp.Models.Item>*@
+@*Update @model property *@
+@model AOWebApp.ViewModels.ItemSearchViewModel
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+@functions{
+    public string isSelected(string value, string comp)
+    {
+        string selected = null;
+        if (value == comp) { selected = "selected"; }
+        return selected;
+    }
+}
+@*Task 1 Update HTML Boostrap style*@
+<div class="container">
+
+    @*Page Title*@
+    <div class="row">
+        <h2 class="text-center bg-light text-dark">Shop Items</h2>
+    </div>
+    
+    @*Search Form*@
+<form asp-controller="Items" asp-action="Index" method="post">
+    <div class="row form-group">
+        <div class="col-3">
+            @*Update search textbox use asp-for *@
+            @*<input type="text" class="form-control" maxlength="100" name="searchText" value="@ViewBag.searchText" placeholder="Search Item..." title="searchItem" />*@
+            <input type="text" class="form-control" maxlength="100" asp-for="SearchText" placeholder="Search Item..." title="searchItem" />
+        </div>
+        @*Prac04: Add a select element*@
+        <div class="col-3">
+            @* Setting name, tooltips*@
+            @*<select class="form-select" id="floatingSelect" name="categoryId" asp-items="@ViewBag.CategoryList" data-bs-toggle="tooltip" data-bs-title="View items for a specific category">*@
+            @*Update category select list use asp-for*@
+            <select class="form-select" asp-for="CategoryId" asp-items="@Model.CategoryList" data-bs-toggle="tooltip" data-bs-title="View items for a specific category">
+                <option selected>All Categories...</option>
+            </select>
+        </div>
+        <div class="col-3">
+            @* Implement sorting funciton*@
+            <select class="form-select" name="sortOrder" data-bs-toggle="tooltip" data-bs-title="Sorting items">
+                <!option value="" @isSelected("", ViewBag.sortOrder)>Item Name [asc]</!option>
+                <!option value="name_desc" @isSelected("name_desc", ViewBag.sortOrder)>Item Name [desc]</!option>
+                <!option value="price_asc" @isSelected("price_asc", ViewBag.sortOrder)>Item Price [asc]</!option>
+                <!option value="price_desc" @isSelected("price_desc", ViewBag.sortOrder)>Item Price [desc]</!option>
+            </select>
+        </div>
+
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary">Search</button>
+            @*Anchor Tag helper button*@
+            <a class="btn btn-outline-primary" asp-action="Create">Create New</a>
+        </div>
+    </div>
+    <br>
+    @*Implementing a record Count and show message*@
+    @if (Model.SearchText != null)
+    {
+        if (Model.ItemList.Count != 0)
+        {<p>Your search returned @Model.ItemList.Count matching item@(Model.ItemList.Count != 1 ? "s" : "")</p>}
+        else
+        {<h5 class="text-danger">Ooops, No items matched your search...</h5>}
+
+    }
+    else
+    {
+        <p> Showing @Model.ItemList.Count items</p> 
+    }
+</form>
+    
+
+    @*Content Card *@
+    <div class="row">
+            @foreach (var item in Model.ItemList)
+            {
+               <div class="col-md-4">
+                   <div class="card" style="width: 18rem;">
+
+                       <div class="card-body">
+                           <h5 class="card-title">@Html.DisplayFor(modelItem => item.TheItem.ItemName)</h5>
+
+                           <p class="card-text">
+                               Category: @item.TheItem.Category.CategoryName
+                               <br>
+                               @*Description: @Html.DisplayFor(modelItem => item.ItemDescription)*@
+                               Description: @(item.TheItem.ItemDescription.Length > 100 ? item.TheItem.ItemDescription.Substring(0, 100) + "..." : item.TheItem.ItemDescription)
+                               <br>
+                               Cost: @item.TheItem.ItemCost.ToString("C", new System.Globalization.CultureInfo("en-US"))
+                               <br>
+                               Rating: @(item.ReviewCount > 0 ? item.AverageRating.ToString("N1") : "no reviews")
+                               <br>
+                               <img src="@item.TheItem.ItemImage" class="card-img-top" alt="Item Image">
+                           </p>
+                           <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.TheItem.ItemId">View Item Detail</a>
+                       </div>
+
+                   </div>
+               </div>
+            }
+        
+    </div>
+</div>

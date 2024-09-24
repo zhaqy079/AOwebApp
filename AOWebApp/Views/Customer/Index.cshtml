@@ -1,0 +1,101 @@
+@*@model IEnumerable<AOWebApp.Models.Customer>*@
+@model AOWebApp.ViewModels.CustomerSearchViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@*Search Form*@
+<form asp-controller="Customer" asp-action="Index" method="post">
+    <div class="row form-group">
+        <div class="col-3">
+            @*Update search textbox use asp-for *@
+            @*<input type="text" class="form-control" maxlength="100" name="searchText" placeholder="Search Customer..." title="searchCustomer" />*@
+            <input type="text" class="form-control" maxlength="100" asp-for="SearchText" placeholder="Search Customer..." title="searchCustomer" />
+        </div>
+        @*Prac04: Add a select element*@
+        <div class="col-3">
+            @* Setting name, tooltips*@
+            @*<select class="form-select" id="floatingSelect" name="suburb" asp-items="Model.SuburbList" data-bs-toggle="tooltip" data-bs-title="Search by suburb">*@
+            <select asp-for="Suburb" class="form-select" asp-items="Model.SuburbList" data-bs-toggle="tooltip" data-bs-title="Search by suburb">
+                <option selected>All Suburbs...</option>
+            </select>
+        </div>
+
+        <div class="col-3">
+            <button type="submit" class="btn btn-outline-primary">Search</button>
+            <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+        </div>
+    </div>
+
+        <br>
+
+        @*Implementing a record Count and show message*@
+        @if (Model.SearchText != null)
+        {
+            if (Model.CustomerList.Count != 0)
+            {<p>Matching Record Returned: @Model.CustomerList.Count</p>}
+        else
+        {<h5 class="text-danger">Ooops, No Customer name matched your search...</h5>}
+
+        }
+        else
+        {
+        <p> Total: @Model.CustomerList.Count Customers</p>
+        }
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerList[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerList[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerList[0].ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerList[0].Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CustomerList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.Raw(item.ContactNumber)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Address.AddressId)*@
+                    @if (item.Address != null)
+                    {
+                        @item.Address.AddressLine <br>
+                        <span>@item.Address.Suburb,</span>
+                        <span>@item.Address.Postcode</span>
+                        <span>[@item.Address.Region]</span>
+
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

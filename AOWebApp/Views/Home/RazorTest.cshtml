@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Razor Test Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Razor Test</h1>
+    <hr>
+</div>
+
+<div class="text-center">
+    <h3 class="display-6"> Declaring Variables</h3>
+    @{
+        var myMessage = "Hello World";
+    }
+    <p>Greeting: @myMessage</p>
+</div>
+
+<div class="text-center">
+    <h3 class="display-6"> Control Structures</h3>
+    @{
+        var isActive = true;
+    }
+
+    @if (isActive)
+        {
+        <p>Welcome to C# and ASP.NET</p>
+        }
+
+
+    @{int[] list = { 1, 2, 3, 4, 5 };
+
+    }
+
+    @foreach (var i in list)
+    {
+            <p>loop No. @i</p>
+    }
+</div>
+
+
+

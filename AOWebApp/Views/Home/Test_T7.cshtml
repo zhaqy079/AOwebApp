@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Test_T7";
+    // task 9 sharing a layout 
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Test</h1>
+    @*Task 7 *@
+    <!--<p>ViewBag.id2: @ViewBag.id</p>
+    <p>ViewData["id"]: @ViewData["id"]</p>-->
+
+    @*Task 8 *@
+    <p>ViewBag.id2: @ViewBag.id</p>
+    <p>ViewBag.searchText: @ViewBag.searchText</p>
+
+    <form method="post" action="/Home/Test_T7">
+        <input type="text" name="text" />
+        <button type="submit">Save</button>
+    </form>
+</div>
+

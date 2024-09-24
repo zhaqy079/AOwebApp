@@ -1,0 +1,46 @@
+﻿<Properties StartupConfiguration="{7EBA880F-A1D7-442B-B5B9-49B9E3D03A6A}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AOWebApp/appsettings.json">
+    <Files>
+      <File FileName="AOWebApp/Controllers/ReportsController.cs" />
+      <File FileName="AOWebApp/Views/Reports/AnnualSalesReport.cshtml" />
+      <File FileName="AOWebApp/Views/_ViewStart.cshtml" />
+      <File FileName="AOWebApp/Views/Shared/_Layout.cshtml" />
+      <File FileName="AOWebApp/Controllers/ItemsController.cs" />
+      <File FileName="AOWebApp/Views/Items/Index.cshtml" />
+      <File FileName="AOWebApp/Models/Customer.cs" />
+      <File FileName="AOWebApp/Models/Item.cs" />
+      <File FileName="AOWebApp/appsettings.json" Line="16" Column="2" />
+      <File FileName="AOWebApp/Program.cs" />
+      <File FileName="AOWebApp/Properties/launchSettings.json" />
+      <File FileName="AOWebApp/Data/AmazonOrdersContext.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AOWebApp" expanded="True">
+            <Node name="AOWebApp" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Items" expanded="True" />
+                <Node name="Reports" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.AOWebApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/dudu/Projects/AOWebApp/AOWebApp/Views/Home/Index.cshtml" relfile="AOWebApp/Views/Home/Index.cshtml" line="3" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

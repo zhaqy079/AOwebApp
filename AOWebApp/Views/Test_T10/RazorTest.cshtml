@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Razor Test Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Prac 02: Razor Test</h1>
+    <hr>
+</div>
+
+<div class="text-center">
+    @{
+        var num1 = 1;
+        var num2 = 1;
+    }
+    <p>Task 1 get sum</p>
+    <p>@num1 + @num2  = @(num1 + num2)</p>
+    <br>
+    @{
+        string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+    }
+    <p>Task 2 un-ordered list</p>
+    <ul>
+        @foreach (var i in cars)
+        {
+            <li>@i</li>
+        }
+    </ul>
+    <br>
+    <p>Task 3  an array of anonymous coordinate objects </p>
+    @{
+        var anonArray = new[] { new { x = 0, y = 0 }, new { x = 1, y = 1 } };
+
+    }
+    @foreach (var i in anonArray)
+    {
+        <li>x: @i.x y: @i.y</li>
+    }
+    <br>
+    <p>Task 4 and 5 Pass parameter</p>
+    <a asp-area="" asp-controller="Test_T10" asp-action="RazorTest">Pass a Value to Route Segment</a>
+    <br>
+    <br>
+    <form method="get" action="/Test_T10/RazorTest">
+        <input type="text" name="queryParam" />
+        <button type="submit" class="btn btn-primary">Pass Query Parameter</button>
+    </form>
+    <br>
+    <form method="post" action="/Test_T10/RazorTest">
+        <input type="text" name="formParam" />
+        <button type="submit" class="btn btn-primary">Pass Form Parameter</button>
+    </form>
+
+    <br>
+
+    <div class="text-center">
+        <h2>Received Parameters</h2>
+        <p>Route Parameter: @ViewBag.RouteParam</p>
+        <p>Query Parameter: @ViewBag.QueryParam</p>
+        <p>Form Parameter: @ViewBag.FormParam</p>
+    </div>
+</div>
