@@ -28,6 +28,15 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+//Prac Week 10 Part2
+// run app, the URL notes: http://localhost:64354/api/itemsWebAPI
+app.UseCors(b =>
+{
+    b.AllowAnyMethod();
+    b.AllowAnyOrigin();
+    b.AllowAnyHeader();
+});
+
 app.UseAuthorization();
 
 app.MapControllerRoute(

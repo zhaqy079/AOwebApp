@@ -1,8 +1,10 @@
+/Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/aowebapp/package-lock.json
+/Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/aowebapp/package.json
+/Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/aowebapp/public/manifest.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/appsettings.Development.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/appsettings.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/libman.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/AOWebApp.staticwebassets.runtime.json
-/Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/AOWebApp
 /Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/AOWebApp.deps.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/AOWebApp.runtimeconfig.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/AOWebApp.dll
@@ -576,6 +578,7 @@
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/AOWebApp.MvcApplicationPartsAssemblyInfo.cache
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/AOWebApp.RazorAssemblyInfo.cache
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/AOWebApp.RazorAssemblyInfo.cs
+/Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/AOWebApp.sourcelink.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/staticwebassets.build.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/staticwebassets.development.json
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/staticwebassets/msbuild.AOWebApp.Microsoft.AspNetCore.StaticWebAssets.props
@@ -592,3 +595,4 @@
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/AOWebApp.pdb
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/AOWebApp.genruntimeconfig.cache
 /Users/dudu/Projects/AOWebApp/AOWebApp/obj/Release/net8.0/ref/AOWebApp.dll
+/Users/dudu/Projects/AOWebApp/AOWebApp/bin/Release/net8.0/aowebapp/src/assets/itemData.json

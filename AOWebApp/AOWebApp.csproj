@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UseAppHost>false</UseAppHost>
 <DefineConstants>$(DefineConstants);USE_SQLITE</DefineConstants> 
  </PropertyGroup>
 
@@ -25,12 +26,18 @@
     <None Remove="Models\CodeFirst\" />
     <None Remove="ViewModels\" />
     <None Remove="Views\Reports\" />
+    <None Remove="aowebapp\src\components\" />
+    <None Remove="aowebapp\src\assets\" />
+    <None Remove="aowebapp\src\routes\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Test_T10\" />
     <Folder Include="Models\CodeFirst\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Reports\" />
+    <Folder Include="aowebapp\src\components\" />
+    <Folder Include="aowebapp\src\assets\" />
+    <Folder Include="aowebapp\src\routes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Test_T10\Test_T10Index.cshtml" />
